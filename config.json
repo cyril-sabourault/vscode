@@ -1,0 +1,345 @@
+{
+    "ociVersion": "0.3.0",
+    "platform": {
+        "os": "",
+        "arch": ""
+    },
+    "process": {
+        "terminal": false,
+        "user": {},
+        "args": [
+            "/usr/local/bin/start.sh"
+        ],
+        "env": [
+            "DISPLAY=unix:0",
+            "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+            "HOME=/home/user"
+        ],
+        "cwd": "/home/user",
+        "capabilities": [
+            "CAP_CHOWN",
+            "CAP_DAC_OVERRIDE",
+            "CAP_FSETID",
+            "CAP_FOWNER",
+            "CAP_MKNOD",
+            "CAP_NET_RAW",
+            "CAP_SETGID",
+            "CAP_SETUID",
+            "CAP_SETFCAP",
+            "CAP_SETPCAP",
+            "CAP_NET_BIND_SERVICE",
+            "CAP_SYS_CHROOT",
+            "CAP_KILL",
+            "CAP_AUDIT_WRITE"
+        ],
+        "rlimits": [
+            {
+                "type": "RLIMIT_NOFILE",
+                "hard": 1024,
+                "soft": 1024
+            }
+        ],
+        "noNewPrivileges": true,
+        "apparmorProfile": "docker-default"
+    },
+    "root": {
+        "path": "rootfs",
+        "readonly": false
+    },
+    "hostname": "vscode",
+    "mounts": [
+        {
+            "destination": "/tmp/.X11-unix",
+            "type": "bind",
+            "source": "/tmp/.X11-unix",
+            "options": [
+                "rw",
+                "rbind",
+                "rprivate"
+            ]
+        },
+        {
+            "destination": "/home/user",
+            "type": "bind",
+            "source": "/home/cyril/workspace",
+            "options": [
+                "rw",
+                "rbind",
+                "rprivate"
+            ]
+        },
+        {
+            "destination": "/proc",
+            "type": "proc",
+            "source": "proc"
+        },
+        {
+            "destination": "/dev",
+            "type": "tmpfs",
+            "source": "tmpfs",
+            "options": [
+                "nosuid",
+                "strictatime",
+                "mode=755",
+                "size=65536k"
+            ]
+        },
+        {
+            "destination": "/dev/pts",
+            "type": "devpts",
+            "source": "devpts",
+            "options": [
+                "nosuid",
+                "noexec",
+                "newinstance",
+                "ptmxmode=0666",
+                "mode=0620"
+            ]
+        },
+        {
+            "destination": "/dev/shm",
+            "type": "tmpfs",
+            "source": "shm",
+            "options": [
+                "nosuid",
+                "noexec",
+                "nodev",
+                "mode=1777",
+                "size=65536k"
+            ]
+        },
+        {
+            "destination": "/dev/mqueue",
+            "type": "mqueue",
+            "source": "mqueue",
+            "options": [
+                "nosuid",
+                "noexec",
+                "nodev"
+            ]
+        },
+        {
+            "destination": "/sys",
+            "type": "sysfs",
+            "source": "sysfs",
+            "options": [
+                "nosuid",
+                "noexec",
+                "nodev"
+            ]
+        },
+        {
+            "destination": "/sys/fs/cgroup",
+            "type": "cgroup",
+            "source": "cgroup",
+            "options": [
+                "nosuid",
+                "noexec",
+                "nodev",
+                "relatime"
+            ]
+        },
+        {
+            "destination": "/etc/hosts",
+            "type": "bind",
+            "source": "/etc/hosts",
+            "options": [
+                "rbind",
+                "rprivate",
+                "ro"
+            ]
+        },
+        {
+            "destination": "/etc/resolv.conf",
+            "type": "bind",
+            "source": "/etc/resolv.conf",
+            "options": [
+                "rbind",
+                "rprivate",
+                "ro"
+            ]
+        }
+    ],
+    "hooks": {},
+    "linux": {
+        "uidMappings": [
+            {
+                "hostID": 886432,
+                "containerID": 0,
+                "size": 46578392
+            }
+        ],
+        "gidMappings": [
+            {
+                "hostID": 886432,
+                "containerID": 0,
+                "size": 46578392
+            }
+        ],
+        "resources": {
+            "devices": [
+                {
+                    "allow": true,
+                    "type": "c",
+                    "major": 1,
+                    "minor": 3,
+                    "access": "rwm"
+                },
+                {
+                    "allow": true,
+                    "type": "c",
+                    "major": 1,
+                    "minor": 5,
+                    "access": "rwm"
+                },
+                {
+                    "allow": true,
+                    "type": "c",
+                    "major": 1,
+                    "minor": 7,
+                    "access": "rwm"
+                },
+                {
+                    "allow": true,
+                    "type": "c",
+                    "major": 1,
+                    "minor": 9,
+                    "access": "rwm"
+                },
+                {
+                    "allow": true,
+                    "type": "c",
+                    "major": 1,
+                    "minor": 8,
+                    "access": "rwm"
+                },
+                {
+                    "allow": true,
+                    "type": "c",
+                    "major": 226,
+                    "minor": 0,
+                    "access": "rwm"
+                },
+                {
+                    "allow": true,
+                    "type": "c",
+                    "major": 226,
+                    "minor": 64,
+                    "access": "rwm"
+                }
+            ],
+            "disableOOMKiller": false,
+            "oomScoreAdj": 0,
+            "memory": {
+                "limit": 0,
+                "reservation": 0,
+                "swap": 0,
+                "kernel": 0,
+                "kernelTCP": null,
+                "swappiness": 18446744073709551615
+            },
+            "cpu": {
+                "shares": 0,
+                "quota": 0,
+                "period": 0,
+                "cpus": "",
+                "mems": ""
+            },
+            "pids": {
+                "limit": 0
+            },
+            "blockIO": {
+                "blkioWeight": 0
+            }
+        },
+        "namespaces": [
+            {
+                "type": "ipc"
+            },
+            {
+                "type": "uts"
+            },
+            {
+                "type": "mount"
+            },
+            {
+                "type": "network"
+            },
+            {
+                "type": "pid"
+            },
+            {
+                "type": "user"
+            }
+        ],
+        "devices": [
+            {
+                "path": "/dev/null",
+                "type": "c",
+                "major": 1,
+                "minor": 3,
+                "fileMode": 438,
+                "uid": 0,
+                "gid": 0
+            },
+            {
+                "path": "/dev/zero",
+                "type": "c",
+                "major": 1,
+                "minor": 5,
+                "fileMode": 438,
+                "uid": 0,
+                "gid": 0
+            },
+            {
+                "path": "/dev/full",
+                "type": "c",
+                "major": 1,
+                "minor": 7,
+                "fileMode": 438,
+                "uid": 0,
+                "gid": 0
+            },
+            {
+                "path": "/dev/urandom",
+                "type": "c",
+                "major": 1,
+                "minor": 9,
+                "fileMode": 438,
+                "uid": 0,
+                "gid": 0
+            },
+            {
+                "path": "/dev/random",
+                "type": "c",
+                "major": 1,
+                "minor": 8,
+                "fileMode": 438,
+                "uid": 0,
+                "gid": 0
+            },
+            {
+                "path": "/dev/dri/card0",
+                "type": "c",
+                "major": 226,
+                "minor": 0,
+                "fileMode": 8624,
+                "uid": 0,
+                "gid": 44
+            },
+            {
+                "path": "/dev/dri/controlD64",
+                "type": "c",
+                "major": 226,
+                "minor": 64,
+                "fileMode": 8624,
+                "uid": 0,
+                "gid": 44
+            }
+        ],
+        "seccomp": {
+            "defaultAction": "",
+            "architectures": null
+        }
+    }
+}
