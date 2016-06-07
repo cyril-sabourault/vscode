@@ -42,8 +42,8 @@ RUN apt-get update && apt-get install -y \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& npm update -g
 
-# download the release 1.0
-RUN curl -sSL https://go.microsoft.com/fwlink/?LinkID=760868 -o /tmp/vs.zip \
+# download the release 1.2
+RUN curl -sSL https://go.microsoft.com/fwlink/?LinkID=620884 -o /tmp/vs.zip \
 	&& unzip /tmp/vs.zip -d /usr/src/ \
 	&& rm -rf /tmp/vs.zip \
 	&& ln -snf /usr/src/VSCode-linux-x64/code /usr/local/bin/code
