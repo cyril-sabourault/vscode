@@ -1,0 +1,6 @@
+{
+  "name": "vscode",
+  "tagline": "Virtual Studio Code in a docker container",
+  "body": "# Visual Studio in a container\r\nNOTE: Needs /dev/dri\r\n\r\n\r\n```bash\r\ndocker run -d \\\r\n   -v /tmp/.X11-unix:/tmp/.X11-unix \\\r\n   -v /home/$USER/workspace:/home/user \\\r\n   -e DISPLAY=unix$DISPLAY \\\r\n   --device /dev/dri \\\r\n   --name vscode \\\r\n   limezest/vscode\r\n```\r\n## start.sh\r\n```bash\r\n  #!/bin/bash\r\n  su user -c /usr/local/bin/code\r\n```\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
